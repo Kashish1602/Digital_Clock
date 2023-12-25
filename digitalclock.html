@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="digitalclock.css">
+    <script>
+        clock=()=>{
+            var d=new Date();
+            var h=d.getHours();
+            var m=d.getMinutes();
+            var s=d.getSeconds();
+            document.getElementById("a").innerHTML=h;
+            document.getElementById("b").innerHTML=m;
+            document.getElementById("c").innerHTML=s;
+          if(h>12)
+          {
+            document.getElementById("d").innerHTML="PM";
+          }
+          else{
+            document.getElementById("d").innerHTML="AM";
+          }
+
+            // setTimeout(clock,1000);
+
+        }
+        setInterval(clock,1000);
+          
+        
+        
+    </script>
+</head>
+<body onload="clock()">
+    <div class="container">
+    <div class="content">
+      <div class="content1">
+    <div id="a"></div>:
+    <div id="b"></div>:
+    <div id="c"></div>:
+    <div id="d"></div>
+  </div>
+</div>
+</div>
+</body>
+</html>
